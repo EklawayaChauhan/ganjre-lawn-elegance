@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { siteConfig } from "@/config/siteConfig";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -19,18 +20,39 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Format message for WhatsApp
+    const eventTypeLabels: Record<string, string> = {
+      wedding: "Wedding",
+      reception: "Reception",
+      engagement: "Engagement",
+      birthday: "Birthday",
+      corporate: "Corporate Event",
+      other: "Other",
+    };
+
+    const whatsappMessage = `
+🌹 *New Inquiry from Ganjre Lawn Website*
+
+👤 *Name:* ${formData.name}
+📞 *Phone:* ${formData.phone}
+${formData.email ? `📧 *Email:* ${formData.email}` : ""}
+${formData.eventDate ? `📅 *Event Date:* ${formData.eventDate}` : ""}
+${formData.eventType ? `🎉 *Event Type:* ${eventTypeLabels[formData.eventType] || formData.eventType}` : ""}
+${formData.guestCount ? `👥 *Expected Guests:* ${formData.guestCount}` : ""}
+${formData.message ? `💬 *Message:* ${formData.message}` : ""}
+    `.trim();
+
+    // Create WhatsApp URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodedMessage}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, "_blank");
+    
     toast({
-      title: "Message Sent!",
-      description: "Thank you for your inquiry. We'll get back to you within 24 hours.",
-    });
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      eventDate: "",
-      eventType: "",
-      guestCount: "",
-      message: "",
+      title: "Opening WhatsApp",
+      description: "Your inquiry is being sent via WhatsApp.",
     });
   };
 
@@ -47,19 +69,19 @@ const ContactSection = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 98765 43210",
-      href: "tel:+919876543210",
+      value: siteConfig.phone,
+      href: `tel:${siteConfig.phone.replace(/\s/g, "")}`,
     },
     {
       icon: Mail,
       label: "Email",
-      value: "contact@ganjrelawn.com",
-      href: "mailto:contact@ganjrelawn.com",
+      value: siteConfig.email,
+      href: `mailto:${siteConfig.email}`,
     },
     {
       icon: MapPin,
       label: "Address",
-      value: "Ganjre Lawn, Station Road, Near City Mall, Aurangabad, Maharashtra 431001",
+      value: siteConfig.address,
       href: "#",
     },
     {
@@ -71,9 +93,9 @@ const ContactSection = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: MessageCircle, href: "https://wa.me/919876543210", label: "WhatsApp" },
+    { icon: Facebook, href: siteConfig.facebookUrl, label: "Facebook" },
+    { icon: Instagram, href: siteConfig.instagramUrl, label: "Instagram" },
+    { icon: MessageCircle, href: `https://wa.me/${siteConfig.whatsappNumber}`, label: "WhatsApp" },
   ];
 
   return (
@@ -195,7 +217,8 @@ const ContactSection = () => {
               </div>
 
               <Button type="submit" variant="gradient" className="w-full">
-                Send Inquiry
+                <MessageCircle className="w-5 h-5 mr-2" />
+                Send Inquiry via WhatsApp
               </Button>
             </form>
           </div>
@@ -221,17 +244,19 @@ const ContactSection = () => {
               ))}
             </div>
 
-            {/* Map Placeholder */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-gradient-to-br from-rose-100 to-purple-100 border border-rose-200">
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
-                <MapPin className="w-12 h-12 text-rose-500 mb-2" />
-                <p className="font-serif font-bold text-lg text-foreground">
-                  Ganjre Lawn
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Station Road, Aurangabad
-                </p>
-              </div>
+            {/* Google Maps Embed */}
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-rose-200">
+              <iframe
+                src={siteConfig.googleMapsEmbedUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Ganjre Lawn Location"
+                className="absolute inset-0"
+              />
             </div>
 
             {/* Social Links */}
