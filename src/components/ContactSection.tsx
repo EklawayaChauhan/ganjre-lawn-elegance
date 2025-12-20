@@ -20,8 +20,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Format message for WhatsApp
+
     const eventTypeLabels: Record<string, string> = {
       wedding: "Wedding",
       reception: "Reception",
@@ -32,7 +31,7 @@ const ContactSection = () => {
     };
 
     const whatsappMessage = `
-🌹 *New Inquiry from Ganjre Lawn Website*
+🌹 *New Inquiry from Ganjre Lawn Website*  
 
 👤 *Name:* ${formData.name}
 📞 *Phone:* ${formData.phone}
@@ -43,13 +42,13 @@ ${formData.guestCount ? `👥 *Expected Guests:* ${formData.guestCount}` : ""}
 ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
     `.trim();
 
-    // Create WhatsApp URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
-    const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodedMessage}`;
-    
-    // Open WhatsApp in new tab
+
+    // *** FIXED WHATSAPP NUMBER ***
+    const whatsappUrl = `https://wa.me/9272044485?text=${encodedMessage}`;
+
     window.open(whatsappUrl, "_blank");
-    
+
     toast({
       title: "Opening WhatsApp",
       description: "Your inquiry is being sent via WhatsApp.",
@@ -100,19 +99,16 @@ ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
 
   return (
     <section id="contact" className="py-20 bg-white relative overflow-hidden">
-      {/* Background Decorations */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-rose-50 rounded-full blur-3xl opacity-50" />
       <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-50 rounded-full blur-3xl opacity-50" />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block text-rose-600 font-semibold tracking-wide uppercase text-sm mb-4">
             Get In Touch
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold mb-6">
-            Contact{" "}
-            <span className="gradient-text">Us</span>
+            Contact <span className="gradient-text">Us</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Ready to book your dream event? Reach out to us and let's make it happen.
@@ -120,7 +116,7 @@ ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
+        
           <div className="bg-white rounded-2xl p-8 shadow-soft border border-rose-100">
             <h3 className="text-2xl font-serif font-bold mb-6">Send us a Message</h3>
             <form onSubmit={handleSubmit} className="space-y-5">
@@ -143,7 +139,7 @@ ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 98765 43210"
+                    placeholder="Enter your number"
                     required
                     className="focus-visible:ring-rose-500"
                   />
@@ -223,9 +219,8 @@ ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
             </form>
           </div>
 
-          {/* Contact Information */}
           <div className="space-y-8">
-            {/* Info Cards */}
+
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
                 <a
@@ -244,7 +239,6 @@ ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
               ))}
             </div>
 
-            {/* Google Maps Embed */}
             <div className="relative aspect-video rounded-2xl overflow-hidden border border-rose-200">
               <iframe
                 src={siteConfig.googleMapsEmbedUrl}
@@ -259,7 +253,6 @@ ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
               />
             </div>
 
-            {/* Social Links */}
             <div>
               <p className="font-medium mb-4">Follow Us</p>
               <div className="flex items-center gap-4">
@@ -277,8 +270,10 @@ ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
                 ))}
               </div>
             </div>
+
           </div>
         </div>
+
       </div>
     </section>
   );

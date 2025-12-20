@@ -16,8 +16,8 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: MessageCircle, href: "https://wa.me/919876543210", label: "WhatsApp" },
+    { icon: Instagram, href: "https://www.instagram.com/ganjre_celebration_lawn/", label: "Instagram" },
+    { icon: MessageCircle, href: "https://wa.me/919021221109", label: "WhatsApp" },
   ];
 
   const scrollToSection = (href: string) => {
