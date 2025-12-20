@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { Heart, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+// 👉 Add logo image import here (change filename later)
+import logo from "@/assets/gallary/sample logo.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -40,16 +43,21 @@ const Navbar = () => {
       }`}
     >
       <nav className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
+
+        {/* Logo with image */}
         <a
           href="#home"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection("#home");
           }}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-3 group"
         >
-          <Heart className="w-8 h-8 text-rose-500 fill-rose-500 group-hover:animate-pulse-soft transition-all" />
+          <img
+            src={logo}
+            alt="Ganjre Lawn Logo"
+            className="w-10 h-10 object-cover rounded-full"
+          />
           <span className="text-2xl font-serif font-bold gradient-text">
             Ganjre Lawn
           </span>

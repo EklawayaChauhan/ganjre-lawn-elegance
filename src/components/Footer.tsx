@@ -1,6 +1,7 @@
 import { Heart, Facebook, Instagram, MessageCircle, Mail } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/gallary/sample logo.jpg";
 
 const Footer = () => {
   const quickLinks = [
@@ -36,15 +37,26 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {/* Brand Column */}
           <div>
-            <a href="#home" className="flex items-center gap-2 mb-6">
-              <Heart className="w-8 h-8 text-rose-500 fill-rose-500" />
-              <span className="text-2xl font-serif font-bold bg-gradient-to-r from-rose-400 to-purple-400 bg-clip-text text-transparent">
-                Ganjre Lawn
-              </span>
-            </a>
+             <a
+          href="#home"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("#home");
+          }}
+          className="flex items-center gap-3 group"
+        >
+          <img
+            src={logo}
+            alt="Ganjre Lawn Logo"
+            className="w-10 h-10 object-cover rounded-full"
+          />
+          <span className="text-2xl font-serif font-bold gradient-text">
+            Ganjre Lawn
+          </span>
+        </a>
             <p className="text-gray-400 leading-relaxed mb-6">
               Creating Memorable Celebrations Since 2014. Your trusted venue for weddings,
-              receptions, and special events in Aurangabad.
+              receptions, and special events in Nagpur.
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social, index) => (
@@ -108,12 +120,12 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <p className="text-gray-400 text-sm">
-              © 2024 Ganjre Lawn. All rights reserved.
+              © 2025 Ganjre Lawn. All rights reserved.
             </p>
             <p className="text-gray-500 text-sm flex items-center gap-1">
               Made with{" "}
               <Heart className="w-4 h-4 text-rose-500 fill-rose-500 animate-pulse-soft" />{" "}
-              in Aurangabad
+              By Eklawaya Chauhan
             </p>
           </div>
         </div>
