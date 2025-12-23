@@ -4,13 +4,13 @@ import { Eye } from "lucide-react";
 // 👉 Import your uploaded images here
 // Rename according to your real filenames!
 import weddingImg from "@/assets/gallary/wedding-1.jpg";
-import receptionImg from "@/assets/gallary/wedding-2.jpg";
-import decorationImg from "@/assets/gallary/wedding-3.jpg";
+import receptionImg from "@/assets/gallary/DSC08202.jpg";
+import decorationImg from "@/assets/gallary/entrance.jpg";
 
-import stageImg from "@/assets/gallary/stage.jpg";
-import diningImg from "@/assets/gallary/dining.jpg";
+import stageImg from "@/assets/gallary/stage area.jpg";
+import diningImg from "@/assets/gallary/Dining venue 2.jpg";
 import parkingImg from "@/assets/gallary/parking.jpg";
-import nightImg from "@/assets/gallary/night.jpg";
+import nightImg from "@/assets/gallary/DSC08159.jpg";
 import mandapImg from "@/assets/gallary/mandap.jpg";
 import gardenImg from "@/assets/gallary/garden.jpg";
 
@@ -64,8 +64,7 @@ const GallerySection = () => {
                   hoveredIndex === index ? "opacity-100" : "opacity-0"
                 }`}
               >
-                <Eye className="w-10 h-10 text-white mb-2" />
-                <span className="text-white font-semibold text-lg">{item.label}</span>
+                
               </div>
 
               {/* Label */}
