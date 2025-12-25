@@ -10,7 +10,7 @@ const AboutSection = () => {
     },
     {
       icon: CalendarDays,
-      value: "10+",
+      value: "15+",
       label: "Years Experience",
       gradient: "from-purple-500 to-purple-600",
     },
@@ -45,9 +45,7 @@ const AboutSection = () => {
             <span className="gradient-text">Ganjre Lawn</span>
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Nestled in the heart of the city, Ganjre Lawn offers a breathtaking venue
-            for your most cherished celebrations. With lush green spaces, elegant
-            amenities, and a dedicated team, we transform your vision into reality.
+            Nestled in the heart of the city, Ganjre Lawn, established in 2007 and owned by Mr. Avinash Arunrao Ganjre, offers a breathtaking venue for your most cherished celebrations. With lush green spaces, elegant amenities, and a dedicated team, we transform your vision into reality.
           </p>
         </div>
 

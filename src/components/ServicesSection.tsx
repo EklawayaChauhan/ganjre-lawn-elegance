@@ -8,7 +8,7 @@ const ServicesSection = () => {
       color: "rose",
       items: [
         "Venue rental (6-12 hours)",
-        "Seating capacity (200-500 guests)",
+        "capacity (100-500+ guests)",
         "Parking facility for 100+ vehicles",
         "Basic decoration setup",
         "Stage & mandap setup",
@@ -47,8 +47,7 @@ const ServicesSection = () => {
         "Custom lighting (fairy, LED)",
         "Makeup artist room",
         "Valet parking service",
-        "Air-conditioned tents",
-        "Kids play area",
+        
       ],
     },
   ];

@@ -3,16 +3,16 @@ import { Eye } from "lucide-react";
 
 // 👉 Import your uploaded images here
 // Rename according to your real filenames!
-import weddingImg from "@/assets/gallary/wedding-1.jpg";
+import weddingImg from "@/assets/gallary/DSC08185.jpg";
 import receptionImg from "@/assets/gallary/DSC08202.jpg";
-import decorationImg from "@/assets/gallary/entrance.jpg";
+import decorationImg from "@/assets/gallary/entrance2.jpg";
 
-import stageImg from "@/assets/gallary/stage area.jpg";
+import stageImg from "@/assets/gallary/DSC08199.jpg";
 import diningImg from "@/assets/gallary/Dining venue 2.jpg";
-import parkingImg from "@/assets/gallary/parking.jpg";
+import parkingImg from "@/assets/gallary/parking.jpeg";
 import nightImg from "@/assets/gallary/DSC08159.jpg";
-import mandapImg from "@/assets/gallary/mandap.jpg";
-import gardenImg from "@/assets/gallary/garden.jpg";
+import mandapImg from "@/assets/gallary/rooms.jpeg";
+import gardenImg from "@/assets/gallary/Catreen.jpg";
 
 const galleryItems = [
   { id: 1, label: "Wedding Ceremonies", gradient: "from-rose-400 to-rose-600", image: weddingImg },
@@ -22,7 +22,7 @@ const galleryItems = [
   { id: 5, label: "Dining Space", gradient: "from-rose-500 to-purple-500", image: diningImg },
   { id: 6, label: "Parking", gradient: "from-pink-500 to-rose-500", image: parkingImg },
   { id: 7, label: "Night View", gradient: "from-purple-500 to-pink-500", image: nightImg },
-  { id: 8, label: "Mandap", gradient: "from-rose-600 to-pink-600", image: mandapImg },
+  { id: 8, label: "Rooms", gradient: "from-rose-600 to-pink-600", image: mandapImg },
   { id: 9, label: "Garden Area", gradient: "from-purple-600 to-rose-600", image: gardenImg },
 ];
 

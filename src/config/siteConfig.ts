@@ -2,7 +2,7 @@
 
 export const siteConfig = {
   // WhatsApp number (without + or spaces, just numbers)
-  whatsappNumber: "919272044485",
+  whatsappNumber: "9190212 21109",
   
   // Google Maps embed URL
   // To get this: Go to Google Maps → Find your location → Click "Share" → "Embed a map" → Copy the src URL
@@ -10,7 +10,7 @@ export const siteConfig = {
   
   // Contact Information
   phone: "+91 90212 21109",
-  email: "contact@ganjrelawn.com",
+  email: "avinashganjre@gmail.com",
   address: "Ganjre Lawn, Hudkeshwar Road, Near laxminarayan school, Nagpur, Maharashtra 440034",
   
   // Social Media Links

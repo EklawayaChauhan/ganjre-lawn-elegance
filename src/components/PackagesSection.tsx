@@ -5,12 +5,12 @@ const PackagesSection = () => {
   const packages = [
     {
       name: "Silver",
-      price: "₹50,000",
+      price: "₹40,000",
       popular: false,
       features: [
-        "Venue for 6 hours",
+        "Venue for 12 hours",
         "Basic decoration",
-        "Seating for 200 guests",
+        "Capacity for 500+ guests",
         "Parking space",
         "Stage setup",
         "Sound system",
@@ -24,9 +24,9 @@ const PackagesSection = () => {
       price: "₹85,000",
       popular: true,
       features: [
-        "Venue for 8 hours",
+        "Venue for 12 hours",
         "Premium decoration",
-        "Seating for 350 guests",
+        "Capacity for 500+ guests",
         "Catering support",
         "Stage & mandap setup",
         "DJ & Sound system",
@@ -38,18 +38,17 @@ const PackagesSection = () => {
     },
     {
       name: "Platinum",
-      price: "₹1,25,000",
+      price: "₹1,50,000",
       popular: false,
       features: [
         "Venue for 12 hours",
         "Luxury decoration",
-        "Seating for 500+ guests",
+        "capacity for 500+ guests",
         "Full catering included",
         "DJ & Professional sound",
         "Photography area setup",
         "Premium lighting",
-        "AC tents available",
-        "Dedicated event coordinator",
+        
       ],
       borderColor: "border-purple-200",
       buttonVariant: "outline" as const,

@@ -55,7 +55,7 @@ const Footer = () => {
           </span>
         </a>
             <p className="text-gray-400 leading-relaxed mb-6">
-              Creating Memorable Celebrations Since 2014. Your trusted venue for weddings,
+              Creating Memorable Celebrations Since 2007. Your trusted venue for weddings,
               receptions, and special events in Nagpur.
             </p>
             <div className="flex items-center gap-4">
