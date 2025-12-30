@@ -5,7 +5,7 @@ import { Eye } from "lucide-react";
 // Rename according to your real filenames!
 import weddingImg from "@/assets/gallary/DSC08185.jpg";
 import receptionImg from "@/assets/gallary/DSC08202.jpg";
-import decorationImg from "@/assets/gallary/entrance2.jpg";
+import decorationImg from "@/assets/gallary/entrance.jpg";
 
 import stageImg from "@/assets/gallary/DSC08199.jpg";
 import diningImg from "@/assets/gallary/Dining venue 2.jpg";
