@@ -45,7 +45,7 @@ ${formData.message ? `💬 *Message:* ${formData.message}` : ""}
     const encodedMessage = encodeURIComponent(whatsappMessage);
 
     // *** FIXED WHATSAPP NUMBER ***
-    const whatsappUrl = `https://wa.me/9272044485?text=${encodedMessage}`;
+    const whatsappUrl = `https://wa.me/ 90212 21109?text=${encodedMessage}`;
 
     window.open(whatsappUrl, "_blank");
 
